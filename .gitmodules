@@ -1,0 +1,12 @@
+[submodule "projects/webext-clearer-effective-altruism-org-forum"]
+	path = projects/webext-clearer-effective-altruism-org-forum
+	url = https://github.com/icetbr/webext-clearer-effective-altruism-org-forum
+[submodule "projects/webext-google-cleaner"]
+	path = projects/webext-google-cleaner
+	url = https://github.com/icetbr/webext-google-cleaner
+[submodule "projects/webext-hacker-news-compact-and-clear"]
+	path = projects/webext-hacker-news-compact-and-clear
+	url = https://github.com/icetbr/webext-hacker-news-compact-and-clear
+[submodule "projects/webext-shopee-advanced-search"]
+	path = projects/webext-shopee-advanced-search
+	url = https://github.com/icetbr/webext-shopee-advanced-search
