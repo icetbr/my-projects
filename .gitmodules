@@ -1,6 +1,6 @@
 [submodule "projects/webext-clearer-effective-altruism-org-forum"]
 	path = projects/webext-clearer-effective-altruism-org-forum
-	url = https://github.com/icetbr/webext-clearer-effective-altruism-org-forum
+	url = git@github.com/icetbr/webext-clearer-effective-altruism-org-forum.git
 [submodule "projects/webext-google-cleaner"]
 	path = projects/webext-google-cleaner
 	url = https://github.com/icetbr/webext-google-cleaner
