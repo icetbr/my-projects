@@ -10,3 +10,6 @@
 [submodule "projects/webext-shopee-advanced-search"]
 	path = projects/webext-shopee-advanced-search
 	url = https://github.com/icetbr/webext-shopee-advanced-search
+[submodule "projects/webext-cleanerreads"]
+	path = projects/webext-cleanerreads
+	url = https://github.com/icetbr/webext-cleanerreads

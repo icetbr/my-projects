@@ -1,0 +1,32 @@
+{
+    "version": "0.2",
+    "language": "en,pt_BR",
+    "files": [
+        "src/**",
+        "**/*.md",
+        "package.json",
+        "manifest.json"
+    ],
+    "words": [
+        "rollup",
+        "plugin-node-resolve",
+        "rollup",
+        "rollup-plugin-cleanup",
+        "rollup-plugin-userscript-metablock",
+        "rollup-plugin-execute",
+        "chrome-webstore-upload-cli",
+        "cspell",
+        "eslint",
+        "eslint-config-airbnb-base",
+        "eslint-plugin-import",
+        "web-ext",
+        "icetbr",
+        "utils",
+        "Userscript",
+        "webext",
+        "userstyle",
+
+        "declutter",
+        "decluttered"
+    ]
+}

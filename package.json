@@ -1,5 +1,8 @@
 {
   "workspaces": [
-    "projects/webext*"
+    "projects/webext*",
+    "projects/dxest",
+    "projects/utils",
+    "projects/configs/*"
   ]
 }

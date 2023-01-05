@@ -1,5 +1,6 @@
-.env
 node_modules
-*/*
-!projects/webext*
-projects/webext-medium-comments-all-in-one-page
+.env
+tmp
+dist
+examples
+package-lock.json

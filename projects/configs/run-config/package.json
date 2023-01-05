@@ -1,0 +1,10 @@
+{
+  "name": "@icetbr/run-config",
+  "version": "1.0.0",
+  "repository": "icetbr/run-config",
+  "author": "icetbr",
+  "license": "MIT",
+  "bin": {
+    "run": "./run.sh"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "@icetbr/cspell-config",
+  "version": "1.0.0",
+  "repository": "icetbr/my-projects",
+  "author": "icetbr",
+  "license": "MIT",
+  "dependencies": {
+    "cspell": "^6.10.1"
+  }
+}

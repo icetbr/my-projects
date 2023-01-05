@@ -1,0 +1,10 @@
+{
+    "git.detectSubmodules"                        : true,
+    // "git.ignoreSubmodules"                        : false,
+    "files.exclude": {
+        "examples": true,
+    },
+    "files.watcherExclude": {
+        "**/examples/**": true,
+    }
+}
