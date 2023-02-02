@@ -13,3 +13,9 @@
 [submodule "projects/webext-cleanerreads"]
 	path = projects/webext-cleanerreads
 	url = https://github.com/icetbr/webext-cleanerreads
+[submodule "projects/webext-gmail-persistent-sidebar"]
+	path = projects/webext-gmail-persistent-sidebar
+	url = https://github.com/icetbr/webext-gmail-persistent-sidebar
+[submodule "projects/userscripts"]
+	path = projects/userscripts
+	url = https://github.com/icetbr/userscripts
