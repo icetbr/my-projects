@@ -40,17 +40,6 @@ firefox          () { build && uploadFf                                   ;}
 firstChrome      () { build && adjustManifestV3 && zipSrc && chromeReadme ;}
 chrome           () { build && adjustManifestV3 && uploadChrome           ;}
 
-# && zenity --info --text $PWD/$WEBEXT_ID
-
-# --id=$WEBEXT_ID
-ddv      () { _nodeSh2 'chromestore' 'upload'                    ;}
-d      () { echo oka                  ;}
-# publishChrome    () { build && adjustManifestV3 && chrome-webstore-upload upload --source dist --extension-id $WEBEXT_ID --client-id $CHROME_KEY --client-secret $CHROME_SECRET --refresh-token $CHROME_REFRESH_TOKEN           ;}
-t () { curl -H "Authorization: Bearer 1//0hVs5EDy4WDnWCgYIARAAGBESNwF-L9IrFu4gBX3-MGjDXHxyIZsWgMXXM4OZSuBq5l19i2ZKGBYwV1XjJbWPdxbn5AVEZcDUVh8" -H "x-goog-api-version: 2" -X POST -T "${WEBEXT_ID}.zip" -v https://www.googleapis.com/upload/chromewebstore/v1.1/items ;}
-x () { curl "https://accounts.google.com/o/oauth2/token" -d "client_id=$CHROME_KEY&client_secret=$CHROME_SECRET&code=$CHROME_CODE&grant_type=authorization_code&redirect_uri=urn:ietf:wg:oauth:2.0:oob" ;}
-y () { echo "https://accounts.google.com/o/oauth2/auth?response_type=code&scope=https://www.googleapis.com/auth/chromewebstore&client_id=$CHROME_KEY&redirect_uri=urn:ietf:wg:oauth:2.0:oob" ;}
-z () { echo "client_id=$CHROME_KEY&client_secret=$CHROME_SECRET&code=$CHROME_REFRESH_TOKEN&grant_type=authorization_code&redirect_uri=urn:ietf:wg:oauth:2.0:oob" ;}
-# zipSrc           () { cd dist && zip -r -FS ../$WEBEXT_ID *                                     ;}
 ## DEV
 watch             () { rollup --config node:@icetbr/rollup-config-webext --watch  ;}
 
