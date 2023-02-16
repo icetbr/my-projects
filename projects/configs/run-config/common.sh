@@ -18,7 +18,7 @@ createGithubRepo () {
     git remote add origin git@github.com:icetbr/$1.git
 }
 
-editIcon               () { ~/tools/Inkscape.AppImage media/icon.svg          ;}
+editIcon               () { ~/tools/inkscape media/icon.svg          ;}
 generateManifestIcons  () { nodeSh generateIcons generateIcons "$iconParams"  ;}
 syncMetadata           () { nodeSh syncMetadata syncMetadata                  ;} # Syncs `description`/`keywords` from `package.json` to Github's **description/topics** sections and README.md first line */
 openuserReadme         () { nodeSh readme openOpenuserReadme                  ;}

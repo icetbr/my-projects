@@ -36,27 +36,38 @@ When ready (`npx run` will call [run.sh](https://github.com/icetbr/my-projects/c
 
 1) **copy the folder** of a similar project to use as a base
    - delete manifest.js addonIds
+   - delete .git folder
+   - don't delete icon.svg (it will be replaced)
+
 2) create an **icon**
     - `npx run editIcon` or https://app.corelvector.com
     - `npx run generateManifestIcons`
+
 3) take a **1280 x 800 screenshot**
     - chrome store requirement
     - use Flameshot + remind last position OR
     - F12 -> responsive Design -> click screenshot button (ctrl + shift + s)
-    - `media/before.png`, `media/after.png` (can be jpeg as well)
+    - inkscape modifications
+      - **blur**: add rectangles on parts to hide, copy image, blur it, set clip group with blurred + rectangles
+    - `media/before.jpg`, `media/after.jpg`
+
 4) `npx cspell`
    - `npx run bundle` and test the userscript
+
 5) `npx run createGithubRepo`
     - commit
+
 6) `npx run syncMetadata`
     - needed fields: description, keywords, repository
     - either in `package.json` or `manifest.json`
+
 7) publish to **openUserjs**
     - `npx run bundle`
     - commit `userscripts` repo
     - manually import the script in openuserjs.org
     - `npx run openuserReadme`
     - update the README with the published URL
+
 8) publish to **firefox**
     - `npx run firefoxFirst` or `npx run firefox`
     - get id after first publish, add to manifest.json
@@ -65,6 +76,9 @@ When ready (`npx run` will call [run.sh](https://github.com/icetbr/my-projects/c
     - 128px icon
     - tags
     - update the README with the published URL
+    - update manifest.json addonIds[0]
+      - "addonIds": ["firefoxurl"]
+
 9)  publish to **chrome**
     - get id after first publish, add to manifest.json
     - `npx run firstChrome` or `npx run chrome`
@@ -83,6 +97,8 @@ When ready (`npx run` will call [run.sh](https://github.com/icetbr/my-projects/c
       - Remote Code: no
       - Mark all 3 last disclosure checkboxes
     - update the README with the published URL
+    - update manifest.json addonIds[1]
+      - "addonIds": ["firefoxurl", "chromeUrl"]
 
 ### To update readmes
 - `npx run openuserReadme`

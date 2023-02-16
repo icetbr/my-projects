@@ -1,10 +1,14 @@
 {
-    "git.detectSubmodules"                        : true,
+    // false or else submodules will pick up all modules changes
+    "git.detectSubmodules"                        : false,
     // "git.ignoreSubmodules"                        : false,
     "files.exclude": {
         "examples": true,
     },
     "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true,
         "**/examples/**": true,
     }
 }
