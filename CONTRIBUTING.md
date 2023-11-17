@@ -1,16 +1,17 @@
 ## Contributing
 Any kind of collaboration is welcome. Open issues to report bugs, ask questions, or just talk about the project.
 
-> This project may contain experimental ideas!
+Source code might be a bit unusual since I'm usually trying out new things, like FPish style.
 
-I'm usually trying out new things, like FPish style. Propose changes and alternative implementations and lets discuss their the pros and cons.
+The following workflows represent how I currently develop
 
-These instructions are evolving, the workflow is focused on my environment setup and what I learned so far. Feel free to suggest improvements.
+I'm usually trying out new things, like FPish style
+
+These instructions are evolving, the workflow is focused on my environment setup and what I learned so far.
 
 
-## Webext Workflow
-
-Use the browser as an IDE. I use Firefox.
+## Browser extensions: development (webext-*)
+I use mostly Firefox as an IDE. There are a few alternatives to work.
 
 ### CSS (alternative 1)
 In the Style Editor tab of DevTools, load `pathToProject/style.css`. Anything you write here is automatically applied. Hit `ctrl + s` to save changes to the file.
@@ -30,9 +31,13 @@ In the console tab of DevTools, CTRL + B will give you near the samething as Sty
 ### JS Online (alternative 3)
 https://stackoverflow.com/questions/41212558/develop-tampermonkey-scripts-in-a-real-ide-with-automatic-deployment-to-openuser?answertab=modifieddesc#tab-top
 
+### Extension (alternative 4)
+- **FF**: run build, about:debugging, This Firefox, Load Temporary Addon
+- **Chrome**: run build && run adjustManifestV3, More Tools -> Extensions, Load unpacked
 
-### Deploy
-When ready (`npx run` will call [run.sh](https://github.com/icetbr/my-projects/configs/run-config/common.sh))
+
+## Browser extensions: deploy
+After the logic is done (`npx run` will call [run.sh](https://github.com/icetbr/my-projects/configs/run-config/common.sh)):
 
 1) **copy the folder** of a similar project to use as a base
    - delete manifest.js addonIds

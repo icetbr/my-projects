@@ -14,5 +14,6 @@ PATH=$PATH:$RUN_PATH                                       # enable calls like `
 
 source $RUN_PATH/../@icetbr/run-config/common.sh
 
-"$@"
 
+"$@"
+[ "$#" -gt 0 ] || printf "Usage:\n\t./do.sh %s\n" "($(compgen -A function | grep '^[^_]' | paste -sd '|' -))"

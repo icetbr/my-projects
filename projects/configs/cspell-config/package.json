@@ -5,6 +5,6 @@
   "author": "icetbr",
   "license": "MIT",
   "dependencies": {
-    "cspell": "^6.10.1"
+    "cspell": "^8.0.0"
   }
 }

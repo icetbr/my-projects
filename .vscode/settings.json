@@ -1,7 +1,7 @@
 {
-    // false or else submodules will pick up all modules changes
-    "git.detectSubmodules"                        : false,
-    // "git.ignoreSubmodules"                        : false,
+    "git.autoRepositoryDetection"                 : true, // default false
+    "git.detectSubmodules"                        : true, // default false   // false or else submodules will pick up all modules changes
+    // "git.ignoreSubmodules"                        : false,  // default true
     "files.exclude": {
         "examples": true,
     },

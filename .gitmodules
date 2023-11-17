@@ -22,3 +22,6 @@
 [submodule "projects/userscripts"]
 	path = projects/userscripts
 	url = https://github.com/icetbr/userscripts
+[submodule "projects/utils"]
+	path = projects/utils
+	url = https://github.com/icetbr/utils

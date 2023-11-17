@@ -19,6 +19,7 @@ import { cssToEsm } from './extras.js';
  */
 export default {
     input: 'src/content.js',
+    cache: false,
     plugins: [
         nodeResolve(),
         cssToEsm(),
@@ -41,6 +42,7 @@ export default {
             plugins: [
                 metablock({
                     order: ['name', 'description', 'version', 'author', 'icon', 'include', 'license', 'namespace', 'updateURL', 'downloadURL', 'require'],
+                    validator: 'off', // because it keeps warning me about all_urls not being valid, but it is
                     override: {
                         name: manifest.name,
                         version: manifest.version,

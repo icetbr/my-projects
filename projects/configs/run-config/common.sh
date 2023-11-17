@@ -6,7 +6,7 @@ iconParams="{
     sizes: [16, 32, 48, 96, 128]
 }"
 
-chromeId=$(grep addonIds manifest.json | grep -Eo '/\w*'| cut -c2-)
+chromeId=$(grep addonIds manifest.json | grep -Eo '/\w*'| cut -c2- || true)
 
 nodeSh     () { node -e "import('@icetbr/utils/$1').then(m => m.$2(${3:- }))"   ;} # Usage: nodeSh fileName functionName params
 # nodeSh       () { node -e "import('@icetbr/utils/$1').then(m => console.log(m.$1(${2:- })))"  ;}
@@ -31,8 +31,8 @@ uploadFf         () { web-ext sign --channel=listed --api-key=$FIREFOX_KEY --api
 uploadChrome     () { chrome-webstore-upload upload --source dist --extension-id $chromeId --client-id $CHROME_KEY --client-secret $CHROME_SECRET --refresh-token $CHROME_REFRESH_TOKEN ;}
 zipSrc           () { cd dist && zip -r -FS ../webext * && cd ..                                ;}
 lint             () { web-ext lint                                                              ;} # lint is mandatory!
-copyFilesToDist  () { cp -R manifest.json src/options.html src/options.js src/state.js media/icons dist 2>/dev/null                                     ;}
-adjustManifestV3 () { sed -i '0,/2/s//3/' dist/manifest.json && sed -i '18,24d' dist/manifest.json && sed -i 's/browser_action/action/g' dist/manifest.json && sed -i 's/browser./chrome./g' dist/content.js && sed -i 's/browser./chrome./g' dist/options.js;}
+copyFilesToDist  () { cp -R manifest.json src/options.html src/options.js src/state.js media/icons dist || true                                    ;} # 2>/dev/null
+adjustManifestV3 () { sed -i '0,/2/s//3/' dist/manifest.json && sed -i '18,24d' dist/manifest.json && sed -i 's/browser_action/action/g' dist/manifest.json && sed -i 's/browser./chrome./g' dist/content.js && sed -i 's/browser./chrome./g' dist/options.js || true;}
 bundle           () { rollup --config node:@icetbr/rollup-config-webext                      ;}
 
 ## PUBLISH
@@ -44,5 +44,6 @@ chrome           () { build && adjustManifestV3 && uploadChrome           ;}
 
 ## DEV
 watch             () { rollup --config node:@icetbr/rollup-config-webext --watch  ;}
+updateDeps        () { npx run npm-check-updates -u                               ;}
 
 test        () { mocha "$@"                                       ;}
