@@ -3,42 +3,40 @@ Any kind of collaboration is welcome. Open issues to report bugs, ask questions,
 
 Source code might be a bit unusual since I'm usually trying out new things, like FPish style.
 
-The following workflows represent how I currently develop
-
-I'm usually trying out new things, like FPish style
-
-These instructions are evolving, the workflow is focused on my environment setup and what I learned so far.
-
+The following workflows represent how I currently develop.
 
 ## Browser extensions: development (webext-*)
-I use mostly Firefox as an IDE. There are a few alternatives to work.
+I use mostly Firefox as an IDE. There are a few ways you can develop:
 
-### CSS (alternative 1)
+### If just CSS (alternative 1)
 In the Style Editor tab of DevTools, load `pathToProject/style.css`. Anything you write here is automatically applied. Hit `ctrl + s` to save changes to the file.
 
-### CSS (alternative 2)
+### If just CSS (alternative 2)
 For quick exploration, make changes in the `Inspector` tab, and after you're done, click the Changes subtab (right pane) and everything you made will be there to be copied.
 
-### JS Local (alternative 1)
+### If JS (alternative 1)
 In the console tab of DevTools, CTRL + B will give you near the samething as Style Editor for scripts. Use `var`instead of `const` or `let` for easy overriding without having to reload the page. CTRL + ENTER will run everything in the window or just yopur selection
 
-### JS Local (alternative 2)
+### If JS (alternative 2)
 1) save the page on a local folder
 2) edit the HTML and link your userscript
 3) open the HTML in [Live Preview][1]
 4) now every save in the script reloads the preview
 
-### JS Online (alternative 3)
+### If JS Online (alternative 3)
 https://stackoverflow.com/questions/41212558/develop-tampermonkey-scripts-in-a-real-ide-with-automatic-deployment-to-openuser?answertab=modifieddesc#tab-top
 
 ### Extension (alternative 4)
-- **FF**: run build, about:debugging, This Firefox, Load Temporary Addon
-- **Chrome**: run build && run adjustManifestV3, More Tools -> Extensions, Load unpacked
+- **FF**: npx run build. In the browser: about:debugging, This Firefox, Load Temporary Addon
+- **Chrome**: npx run build && npx run adjustManifestV3. In the browser: More Tools -> Extensions, Load unpacked
 
 
 ## Browser extensions: deploy
-After the logic is done (`npx run` will call [run.sh](https://github.com/icetbr/my-projects/configs/run-config/common.sh)):
+> NOTE: `npx run TARGET` targets are defined in [run.sh](https://github.com/icetbr/my-projects/configs/run-config/common.sh)
 
+When you're finished developing:
+
+### First time / new project
 1) **copy the folder** of a similar project to use as a base
    - delete manifest.js addonIds
    - delete .git folder
@@ -66,7 +64,7 @@ After the logic is done (`npx run` will call [run.sh](https://github.com/icetbr/
     - needed fields: description, keywords, repository
     - either in `package.json` or `manifest.json`
 
-7) publish to **openUserjs**
+7) publish to **OpenUserJs**
     - `npx run bundle`
     - commit `userscripts` repo
     - manually import the script in openuserjs.org
@@ -74,7 +72,7 @@ After the logic is done (`npx run` will call [run.sh](https://github.com/icetbr/
     - update the README with the published URL
 
 8) publish to **firefox**
-    - `npx run firefoxFirst` or `npx run firefox`
+    - `npx run firefoxFirst`
     - get id after first publish, add to manifest.json
     - description
     - categories: Appearance
@@ -86,7 +84,7 @@ After the logic is done (`npx run` will call [run.sh](https://github.com/icetbr/
 
 9)  publish to **chrome**
     - get id after first publish, add to manifest.json
-    - `npx run firstChrome` or `npx run chrome`
+    - `npx run firstChrome`
     - description
       - replace: list dash for a bullet point
       - replace: bold for capslock
@@ -105,10 +103,17 @@ After the logic is done (`npx run` will call [run.sh](https://github.com/icetbr/
     - update manifest.json addonIds[1]
       - "addonIds": ["firefoxurl", "chromeUrl"]
 
-### To update readmes
-- `npx run openuserReadme`
-- `npx run firefoxReadme`
-- `npx run chromeReadme`
+### Just updating
+- **OpenUserJs**
+  - `npx run bundle`
+  - commit `userscripts` repo
+- `npx run firefox`
+- `npx run chrome`
+
+- update the readmes
+  - `npx run openuserReadme`
+  - `npx run firefoxReadme`
+  - `npx run chromeReadme`
 
 
 
