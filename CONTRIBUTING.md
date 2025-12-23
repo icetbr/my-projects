@@ -1,12 +1,26 @@
-## Contributing
-Any kind of collaboration is welcome. Open issues to report bugs, ask questions, or just talk about the project.
+# Contributing
 
-Source code might be a bit unusual since I'm usually trying out new things, like FPish style.
+## Projects `webext-*`: userscripts
 
-The following workflows represent how I currently develop.
+**VsCode + Chrome**, not Firefox, with auto refresh. More details [here][2]), but basically:
+- enable file access permission for Tampermonkey
+- keep your `==Userscript==` header and add `// @require file:///home/icetbr/projects/projects/webext-google-cleaner/dist/content.js`
+- delete the rest
+- `npm run dev`: updates `dist/content.js` with bundled imports, and then refresh the browser
 
-## Browser extensions: development (webext-*)
-I use mostly Firefox as an IDE. There are a few ways you can develop:
+### Publish
+- `run cspell` (optional)
+- `run prod`
+- `run syncMetadata` (optional)
+- `run userscripts`
+- `run firefox`
+- `run chrome`
+- update the readmes (optional)
+  - `run openuserReadme`
+  - `run firefoxReadme`
+  - `run chromeReadme`
+
+## UNDER REVISION
 
 ### If just CSS (alternative 1)
 In the Style Editor tab of DevTools, load `pathToProject/style.css`. Anything you write here is automatically applied. Hit `ctrl + s` to save changes to the file.
@@ -14,19 +28,28 @@ In the Style Editor tab of DevTools, load `pathToProject/style.css`. Anything yo
 ### If just CSS (alternative 2)
 For quick exploration, make changes in the `Inspector` tab, and after you're done, click the Changes subtab (right pane) and everything you made will be there to be copied.
 
-### If JS (alternative 1)
-In the console tab of DevTools, CTRL + B will give you near the samething as Style Editor for scripts. Use `var`instead of `const` or `let` for easy overriding without having to reload the page. CTRL + ENTER will run everything in the window or just yopur selection
+### If JS: in browser
+**For simple scripts**
 
-### If JS (alternative 2)
+In the console tab of DevTools, CTRL + B will give you near the same thing as Style Editor for scripts. Use `var` instead of `const` or `let` for easy overriding without having to reload the page. CTRL + ENTER will run everything in the window or just your selection
+
+### If JS: in IDE
+See [here][2] for details. This won't work in firefox, but basically:
+- enable file access permission for Tampermonkey
+- keep your `==Userscript==` header and add `@require file:///home/icetbr/projects/myUserScript/content.js`
+- delete the rest
+- refresh the browser on changes
+  - my rollup config does this automatically
+
+### If JS: in IDE, with local copy
+**For slow to reload sites**
+
 1) save the page on a local folder
 2) edit the HTML and link your userscript
 3) open the HTML in [Live Preview][1]
 4) now every save in the script reloads the preview
 
-### If JS Online (alternative 3)
-https://stackoverflow.com/questions/41212558/develop-tampermonkey-scripts-in-a-real-ide-with-automatic-deployment-to-openuser?answertab=modifieddesc#tab-top
-
-### Extension (alternative 4)
+### If JS: create an extension
 - **FF**: npx run build. In the browser: about:debugging, This Firefox, Load Temporary Addon
 - **Chrome**: npx run build && npx run adjustManifestV3. In the browser: More Tools -> Extensions, Load unpacked
 
@@ -119,3 +142,4 @@ When you're finished developing:
 
 [1]: https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server
 <!-- http://localhost:3000/test/hackernews/Meta%20Is%20Transferring%20Jest%20to%20the%20OpenJS%20Foundation%20_%20Hacker%20News.html -->
+[2]: https://stackoverflow.com/questions/41212558/develop-tampermonkey-scripts-in-a-real-ide-with-automatic-deployment-to-openuser?answertab=modifieddesc#tab-top

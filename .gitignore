@@ -4,3 +4,4 @@ tmp
 dist
 examples
 package-lock.json
+pnpm-lock.yaml

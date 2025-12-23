@@ -13,15 +13,18 @@
 [submodule "projects/webext-cleanerreads"]
 	path = projects/webext-cleanerreads
 	url = https://github.com/icetbr/webext-cleanerreads
-[submodule "projects/webext-gmail-persistent-sidebar"]
-	path = projects/webext-gmail-persistent-sidebar
-	url = https://github.com/icetbr/webext-gmail-persistent-sidebar
-[submodule "projects/webext-whatsapp-talk-to-unsaved-contacts"]
-	path = projects/webext-whatsapp-talk-to-unsaved-contacts
-	url = https://github.com/icetbr/webext-whatsapp-talk-to-unsaved-contacts
 [submodule "projects/userscripts"]
 	path = projects/userscripts
 	url = https://github.com/icetbr/userscripts
 [submodule "projects/utils"]
 	path = projects/utils
 	url = https://github.com/icetbr/utils
+[submodule "projects/vitest-cleaner-reporter"]
+	path = projects/vitest-cleaner-reporter
+	url = https://github.com/icetbr/vitest-cleaner-reporter
+[submodule "projects/webext-gmail-persistent-sidebar"]
+	path = projects/webext-gmail-persistent-sidebar
+	url = https://github.com/icetbr/webext-gmail-persistent-sidebar
+[submodule "projects/webext-whatsapp-talk-to-unsaved-contacts"]
+	path = projects/webext-whatsapp-talk-to-unsaved-contacts
+	url = https://github.com/icetbr/webext-whatsapp-talk-to-unsaved-contacts

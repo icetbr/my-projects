@@ -1,17 +1,7 @@
 # My Projects
-Monorepo + submodules of personal projects.
+A `pnpm` workspace of personal `git submodule` projects.
 
-## Why
-Each project is treated as a submodule (`git submodules`) and a workspace (`npm workspaces`).
-
-### Workspaces
-  - I can make a change in one project and it is instantly reflected in every project that uses it
-  - one `node_modules` for all projects, since most share the same dependencies
-
-### Submodules
-  - every project has its own place in github
-  - handle all projects as one in VsCode, easy to make mass changes
-  - parent project holds content relevant to multiple projects, like CONTRIBUTING.md
+I use **pnpm** to link dependencies between projects in a way that keeps VsCode go to behaviour.
 
 
 ## Build files

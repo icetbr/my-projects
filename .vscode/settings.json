@@ -1,14 +1,14 @@
 {
-    "git.autoRepositoryDetection"                 : true, // default false
-    "git.detectSubmodules"                        : true, // default false   // false or else submodules will pick up all modules changes
-    // "git.ignoreSubmodules"                        : false,  // default true
+    "git.autoRepositoryDetection": true, // default false
+    "git.detectSubmodules": true, // default false   // false or else submodules will pick up all modules changes
+    "git.ignoreSubmodules": false, // default true
     "files.exclude": {
-        "examples": true,
+        "examples": true
     },
     "files.watcherExclude": {
         "**/.git/objects/**": true,
         "**/.git/subtree-cache/**": true,
         "**/node_modules/*/**": true,
-        "**/examples/**": true,
-    }
+        "**/examples/**": true
+    },
 }

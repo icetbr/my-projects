@@ -1,0 +1,12 @@
+packages:
+  - 'projects/webext-google-cleaner'
+  - 'projects/utils'
+  - 'projects/publish'
+  - 'projects/configs/*'
+
+# each project's node_module is a link to the one from the workspace
+# eliminates duplication and allows VsCode to navigate to each folder
+# NPM equivalent install-strategy=linked DOESNT WORK
+linkWorkspacePackages: true
+
+saveWorkspaceProtocol: false
