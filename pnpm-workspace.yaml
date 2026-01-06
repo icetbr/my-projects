@@ -1,5 +1,6 @@
 packages:
   - 'projects/webext-google-cleaner'
+  - 'projects/webext-cleanerreads'
   - 'projects/utils'
   - 'projects/publish'
   - 'projects/configs/*'

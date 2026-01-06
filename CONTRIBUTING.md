@@ -33,13 +33,13 @@ For quick exploration, make changes in the `Inspector` tab, and after you're don
 
 In the console tab of DevTools, CTRL + B will give you near the same thing as Style Editor for scripts. Use `var` instead of `const` or `let` for easy overriding without having to reload the page. CTRL + ENTER will run everything in the window or just your selection
 
-### If JS: in IDE
+<!-- ### If JS: in IDE
 See [here][2] for details. This won't work in firefox, but basically:
 - enable file access permission for Tampermonkey
 - keep your `==Userscript==` header and add `@require file:///home/icetbr/projects/myUserScript/content.js`
 - delete the rest
 - refresh the browser on changes
-  - my rollup config does this automatically
+  - my rollup config does this automatically -->
 
 ### If JS: in IDE, with local copy
 **For slow to reload sites**
