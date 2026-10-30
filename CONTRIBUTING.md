@@ -138,7 +138,8 @@ When you're finished developing:
   - `npx run firefoxReadme`
   - `npx run chromeReadme`
 
-
+## Filter log
+-/(Cross|APMS|CTOKEN|NetworkError)/
 
 [1]: https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server
 <!-- http://localhost:3000/test/hackernews/Meta%20Is%20Transferring%20Jest%20to%20the%20OpenJS%20Foundation%20_%20Hacker%20News.html -->

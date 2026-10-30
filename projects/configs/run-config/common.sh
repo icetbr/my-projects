@@ -38,9 +38,9 @@ zipSrc           () { cd dist && zip -r -FS ../webext * && cd ..                
 lint             () { $webExt lint                                                              ;} # lint is mandatory!
 # copyFilesToDist  () { cp -R manifest.json src/options.html src/options.js src/state.js media/icons dist || true                                    ;} # 2>/dev/null
 # copyFilesToDist  () { rsync -a --exclude=*.ts src/* manifest.json media/icons dist || true                                    ;} # 2>/dev/null
-copyFilesToDist  () { rsync -a src/content.js manifest.json media/icons dist || true                                    ;} # 2>/dev/null
+copyFilesToDist  () { rsync -a manifest.json media/icons dist || true                                    ;} # 2>/dev/null
 adjustManifestV3 () { sed -i '0,/2/s//3/' dist/manifest.json && sed -i '19,24d' dist/manifest.json && sed -i 's/browser_action/action/g' dist/manifest.json && sed -i 's/browser./chrome./g' dist/content.js && sed -i 's/browser./chrome./g' dist/options.js || true;}
-dev      () { $rollup --config node:@icetbr/rollup-config-webext/dev --watch               ;}
+dev              () { $rollup --config node:@icetbr/rollup-config-webext/dev --watch               ;}
 prod             () { $rollup --config node:@icetbr/rollup-config-webext/prod                      ;}
 watchBrowser     () { $webExt run --verbose --source-dir ./dist                                                             ;}
 refreshBrowser() {
